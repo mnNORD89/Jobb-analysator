@@ -68,3 +68,7 @@ Sätt in din faktiska GitHub-länk här.
 
 ## Slutsats
 Detta projekt visar hur Python kan användas för att samla in, analysera och sammanfatta information från arbetsmarknaden. Det kombinerar datainsamling, struktur, statistik och reflektion kring relevant kompetens för AI-yrken.
+
+
+## Verifiering
+Detta projekt har verifierats genom att köra notebooket mot JobTech API utan kritiska fel.
