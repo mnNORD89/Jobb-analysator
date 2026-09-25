@@ -64,7 +64,7 @@ För arbete med AI, data och molntjänster kan följande certifikat vara relevan
 3. Notebooket hämtar jobbdata automatiskt från JobTech API och sparar den i data.csv.
 
 ## GitHub-länk
-Sätt in din faktiska GitHub-länk här.
+Kommer att uppdateras när ett offentligt GitHub-repository skapats.
 
 ## Slutsats
 Detta projekt visar hur Python kan användas för att samla in, analysera och sammanfatta information från arbetsmarknaden. Det kombinerar datainsamling, struktur, statistik och reflektion kring relevant kompetens för AI-yrken.
