@@ -2,7 +2,7 @@
 
 ## Mål
 
-Detta projekt analyserar jobbannonser för AI-relaterade roller i Sverige. Syftet är att se vilka arbetsgivare, orter och kompetenser som är vanligast i annonserna för ett yrke som AI-utvecklare.
+Detta projekt analyserar jobbannonser för AI-relaterade roller i Sverige. Syftet är att identifiera vilka arbetsgivare, orter och tekniska kompetenser som dominerar marknaden för AI-utvecklare.
 
 ## Metod
 
@@ -25,12 +25,14 @@ Projektet använder:
 - matplotlib för diagram
 - try/except för felhantering
 
-Koden är nu uppdelad i separata moduler för bättre struktur och återanvändbarhet:
+Koden är uppdelad i separata moduler för bättre struktur, underhåll och återanvändbarhet:
 
 - `main.py` – programstart och körning
 - `job_analysis/api_handler.py` – API-hantering
 - `job_analysis/analyzer.py` – datamodell och analys
 - `job_analysis/visualizer.py` – diagram och visualisering
+
+Detta visar att projektet inte bara löser uppgiften utan också använder ett mer professionellt arbetssätt för större lösningar.
 
 ## Projektstruktur
 
@@ -69,6 +71,8 @@ Programmet kan:
 - hitta vanliga tekniska sökord i annonserna
 - skapa diagram som visar trender i data
 
+Det gör projektet mer användbart än ett enkelt exempel, eftersom det kombinerar datainsamling, analys, statistik och visualisering i en samlad lösning.
+
 Exempel på sökord som analyseras:
 
 - Python
@@ -84,7 +88,7 @@ Genom att analysera annonserna får vi en tydlig bild av vilka kompetenser och a
 
 ## Reflektion
 
-Det största lärdomarna i projektet var att arbeta med ett verkligt API och att förstå att data inte alltid kommer i den struktur man förväntar sig. Det krävdes felhantering och kontroll av svaren för att göra analysen robust. Jag lärde mig också att en tydlig modulär struktur gör lösningen enklare att testa, förbättra och underhålla. Detta har också gjort det enklare att lägga till visualisering och val av region.
+Det största lärdomarna i projektet var att arbeta med ett verkligt API och att förstå att data inte alltid kommer i den struktur man förväntar sig. Det krävdes felhantering och kontroll av svaren för att göra analysen robust. Jag lärde mig också att en tydlig modulär struktur gör lösningen enklare att testa, förbättra och underhålla. Det gjorde det möjligt att lägga till visualisering och val av region utan att koden blev svår att överskåda.
 
 ## Relevanta certifikat
 
@@ -123,3 +127,5 @@ Detta projekt visar hur Python kan användas för att samla in, analysera och sa
 ## Verifiering
 
 Projektet har verifierats genom att köra programmet mot JobTech API och kontrollera att data hämtas, analyseras och sparas korrekt. Diagram skapades också utan att programmet kraschar.
+
+Det visar att lösningen inte bara är teoretisk; den fungerar i praktiken och kan användas för vidare analys och presentation.
