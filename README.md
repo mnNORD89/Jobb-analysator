@@ -6,31 +6,28 @@ Detta projekt analyserar jobbannonser för AI-relaterade roller i Sverige. Syfte
 
 ## Metod
 
-1. Hämta jobbannonser från JobTech API.
+1. Läs jobbannonser från `data.csv`.
 2. Normalisera och strukturera datan i objekt.
-3. Spara resultatet i en CSV-fil.
+3. Filtrera annonserna efter ort om ett regionval har angetts.
 4. Räkna antalet annonser per arbetsgivare, plats och nyckelord.
-5. Visualisera resultaten i diagram.
-6. Dokumentera resultatet i notebooket och i detta README.
+5. Visa sammanställningen och enkla stapeldiagram direkt i notebooken.
+6. Dokumentera resultatet i notebooken och i detta README.
 
 ## Teknisk lösning
 
 Projektet använder:
 
 - Python 3
-- requests för API-anrop
 - csv för filhantering
 - collections.Counter för statistik
 - klasser och arv för objektorienterad struktur
-- matplotlib för diagram
 - try/except för felhantering
+- ipykernel för att köra notebooken
+- matplotlib för att visa diagram över arbetsgivare och orter
 
-Koden är uppdelad i separata moduler för bättre struktur, underhåll och återanvändbarhet:
+Programmets kod finns samlad i olika celler i notebooken. Cellerna körs uppifrån och ned:
 
-- `main.py` – programstart och körning
-- `job_analysis/api_handler.py` – API-hantering
-- `job_analysis/analyzer.py` – datamodell och analys
-- `job_analysis/visualizer.py` – diagram och visualisering
+- `projekt.ipynb` – hela programmet och dess stegvisa resultat
 
 Detta visar att projektet inte bara löser uppgiften utan också använder ett mer professionellt arbetssätt för större lösningar.
 
@@ -38,40 +35,33 @@ Detta visar att projektet inte bara löser uppgiften utan också använder ett m
 
 Projektet innehåller nu följande filer:
 
-- `main.py` – huvudprogrammet
-- `projekt.ipynb` – notebookversionen av projektet
-- `data.csv` – sparad jobbdata
-- `job_analysis/` – moduler för API, analys och visualisering
-- `charts/` – genererade diagram
+- `projekt.ipynb` – huvudprogrammet, uppdelat i notebookceller
+- `data.csv` – jobbdata som läses in och analyseras
 - `README.md` – projektinformation
 
 ## Extra funktionalitet
 
 Projektet har utökats med:
 
-- val av region via kommandoradsparameter
-- diagram för arbetsgivare, platser och nyckelord
-- modulär kodstruktur för bättre underhåll och skalbarhet
+- valfri filtrering efter ort direkt i notebooken
+- analys av arbetsgivare, orter och tekniska nyckelord
+- stapeldiagram som jämför de vanligaste arbetsgivarna och orterna
 
-Exempel på körning:
-
-```bash
-python3 main.py --search-term "AI-utvecklare" --limit 20 --region "Stockholm"
-```
+Regionfiltret finns i cell 7 i `projekt.ipynb`.
 
 ## Resultat
 
 Programmet kan:
 
-- hämta jobbannonser från JobTech API
+- läsa in jobbannonser från CSV-filen
 - skapa objekt från varje annons
-- spara data i CSV-format
+- filtrera annonser efter ort
 - räkna hur ofta olika arbetsgivare förekommer
 - räkna hur ofta olika platser förekommer
 - hitta vanliga tekniska sökord i annonserna
-- skapa diagram som visar trender i data
+- visa arbetsgivare och orter i stapeldiagram direkt i notebooken
 
-Det gör projektet mer användbart än ett enkelt exempel, eftersom det kombinerar datainsamling, analys, statistik och visualisering i en samlad lösning.
+Det kombinerar dataanalys, statistik och visualisering i en samlad notebook.
 
 Exempel på sökord som analyseras:
 
@@ -88,7 +78,7 @@ Genom att analysera annonserna får vi en tydlig bild av vilka kompetenser och a
 
 ## Reflektion
 
-Det största lärdomarna i projektet var att arbeta med ett verkligt API och att förstå att data inte alltid kommer i den struktur man förväntar sig. Det krävdes felhantering och kontroll av svaren för att göra analysen robust. Jag lärde mig också att en tydlig modulär struktur gör lösningen enklare att testa, förbättra och underhålla. Det gjorde det möjligt att lägga till visualisering och val av region utan att koden blev svår att överskåda.
+De största lärdomarna i projektet var att läsa in data från en CSV-fil och förstå att data behöver kontrolleras innan analys. Genom att dela upp notebooken i celler blir arbetsflödet lättare att följa och testa steg för steg.
 
 ## Relevanta certifikat
 
@@ -101,20 +91,22 @@ För arbete med AI, data och molntjänster kan följande certifikat vara relevan
 
 ## Installation och körning
 
-1. Skapa en virtuell miljö om du vill.
+1. Skapa och aktivera en virtuell miljö:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
 2. Installera beroenden:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install ipykernel matplotlib
 ```
 
-3. Kör programmet:
+3. Öppna `projekt.ipynb` i VS Code, välj `.venv` som notebook-kärna och kör cellerna uppifrån och ned. CSV-filen läses i cell 7; ange en ort där om du vill filtrera resultatet.
 
-```bash
-python3 main.py --search-term "AI-utvecklare" --limit 20
-```
-
-4. Diagram sparas automatiskt i mappen `charts/`.
+4. Resultaten visas i notebooken. `data.csv` används som indata och skrivs inte över.
 
 ## GitHub-länk
 
@@ -122,10 +114,10 @@ python3 main.py --search-term "AI-utvecklare" --limit 20
 
 ## Slutsats
 
-Detta projekt visar hur Python kan användas för att samla in, analysera och sammanfatta information från arbetsmarknaden. Det kombinerar datainsamling, struktur, statistik, visualisering och reflektion kring relevant kompetens för AI-yrken.
+Detta projekt visar hur Python kan användas för att läsa in, analysera, visualisera och sammanfatta information från arbetsmarknaden. Det kombinerar datastrukturering, statistik och reflektion kring relevant kompetens för AI-yrken.
 
 ## Verifiering
 
-Projektet har verifierats genom att köra programmet mot JobTech API och kontrollera att data hämtas, analyseras och sparas korrekt. Diagram skapades också utan att programmet kraschar.
+Projektet har verifierats genom att läsa `data.csv` i notebooken, kontrollera analysen och visa diagrammen.
 
 Det visar att lösningen inte bara är teoretisk; den fungerar i praktiken och kan användas för vidare analys och presentation.
